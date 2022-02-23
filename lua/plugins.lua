@@ -52,10 +52,24 @@ return packer.startup(function()
   use {'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('plugins.lualine')"}
   use {'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('plugins.bufferline')"}
   use {'norcalli/nvim-colorizer.lua', config = "require('plugins.colorize')", event = "BufRead"}
-  use {'akinsho/nvim-toggleterm.lua', config = "require('plugins.toggleterm')"}
+  use {'akinsho/nvim-toggleterm.lua', event = "BufEnter", config = "require('plugins.toggleterm')"}
   
   --Fuzzy Finder
   use {'nvim-telescope/telescope.nvim', config = "require('plugins.telescope')"}
+
+  -- CMP
+  use {'hrsh7th/nvim-cmp', config = "require('plugins.cmp')"}
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'saadparwaiz1/cmp_luasnip'}
+
+  --Snippets
+  use {'L3MON4D3/LuaSnip'}
+  use {'rafamadriz/friendly-snippets'}
+
+  -- LSP
+  use {"neovim/nvim-lspconfig", config = "require('lsp')"} -- Enable LSP
+  use {"williamboman/nvim-lsp-installer"}  
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
