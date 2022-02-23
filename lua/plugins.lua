@@ -44,6 +44,18 @@ return packer.startup(function()
 
   -- Colorscheme
   use {'navarasu/onedark.nvim'}
+  
+  -- Nvim Tree
+  use {'kyazdani42/nvim-tree.lua', config = "require('plugins.nvim-tree')", cmd = "NvimTreeToggle"}
+
+  -- General
+  use {'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('plugins.lualine')"}
+  use {'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('plugins.bufferline')"}
+  use {'norcalli/nvim-colorizer.lua', config = "require('plugins.colorize')", event = "BufRead"}
+  use {'akinsho/nvim-toggleterm.lua', config = "require('plugins.toggleterm')"}
+  
+  --Fuzzy Finder
+  use {'nvim-telescope/telescope.nvim', config = "require('plugins.telescope')"}
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()

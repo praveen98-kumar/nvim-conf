@@ -43,3 +43,11 @@ keymap("n", "<C-s>", "<ESC>:w<CR>", opts)
 --Save & quite
 keymap("n", "wq", ":wq<CR>", opts)
 keymap("n", "qq", ":q!<CR>", opts)
+
+-- Nvim Tree
+keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
+
+-- Telescope
+keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
+keymap("n", "<S-p>", "<CMD>Telescope live_grep<CR>", { noremap = true })
