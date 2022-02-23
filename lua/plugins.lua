@@ -36,6 +36,15 @@ return packer.startup(function()
 	--Packer can manage itself
 	use { 'wbthomason/packer.nvim' }
 
+  -- Needed to load first
+  use {'nathom/filetype.nvim'}
+  use {'nvim-lua/plenary.nvim'}
+  use {'nvim-lua/popup.nvim'}
+  use {'kyazdani42/nvim-web-devicons'}
+
+  -- Colorscheme
+  use {'navarasu/onedark.nvim'}
+
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
