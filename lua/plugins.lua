@@ -53,7 +53,12 @@ return packer.startup(function()
   use {'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('plugins.bufferline')"}
   use {'norcalli/nvim-colorizer.lua', config = "require('plugins.colorize')", event = "BufRead"}
   use {'akinsho/nvim-toggleterm.lua', event = "BufEnter", config = "require('plugins.toggleterm')"}
-  
+
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', event = "BufWinEnter", config = "require('plugins.treesitter')", run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}}
+  use {'RRethy/nvim-treesitter-textsubjects', after = {'nvim-treesitter'}}
+
   --Fuzzy Finder
   use {'nvim-telescope/telescope.nvim', config = "require('plugins.telescope')"}
 
@@ -70,6 +75,23 @@ return packer.startup(function()
   -- LSP
   use {"neovim/nvim-lspconfig", config = "require('lsp')"} -- Enable LSP
   use {"williamboman/nvim-lsp-installer"}  
+
+  -- Languages & Snippets & Syntax & Formatting
+  use {'p00f/nvim-ts-rainbow', after = {"nvim-treesitter"}}
+  use {'windwp/nvim-autopairs', config = "require('plugins.autopairs')", after = "nvim-cmp"}
+  use {'windwp/nvim-ts-autotag', after = {"nvim-treesitter"}}
+
+  --Comment
+  use {'terrortylor/nvim-comment', config = "require('plugins.comment')"}
+  use {'JoosepAlviste/nvim-ts-context-commentstring', after = {"nvim-treesitter"}}
+
+  -- Git
+  use {'lewis6991/gitsigns.nvim',
+    config = "require('plugins.gitsigns')",
+    event = "BufRead"
+  }
+  use {'sindrets/diffview.nvim'}
+  use {'kdheepak/lazygit.nvim'}
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()

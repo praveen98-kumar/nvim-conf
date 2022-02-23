@@ -51,3 +51,6 @@ keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
 -- Telescope
 keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
 keymap("n", "<S-p>", "<CMD>Telescope live_grep<CR>", { noremap = true })
+
+-- LazyGit
+keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
