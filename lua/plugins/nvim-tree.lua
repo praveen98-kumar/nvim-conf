@@ -5,7 +5,6 @@ end
 
 nvim_tree.setup {
   auto_open = 1, 
-  auto_close = 1, 
   gitignore = 1,
   filters = {
     dotfiles = false,

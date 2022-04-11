@@ -80,6 +80,7 @@ return packer.startup(function()
   use {'p00f/nvim-ts-rainbow', after = {"nvim-treesitter"}}
   use {'windwp/nvim-autopairs', config = "require('plugins.autopairs')", after = "nvim-cmp"}
   use {'windwp/nvim-ts-autotag', after = {"nvim-treesitter"}}
+  use { 'jose-elias-alvarez/null-ls.nvim', config = "require('plugins.null-ls')"}
 
   --Comment
   use {'terrortylor/nvim-comment', config = "require('plugins.comment')"}

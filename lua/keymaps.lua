@@ -44,6 +44,9 @@ keymap("n", "<C-s>", "<ESC>:w<CR>", opts)
 keymap("n", "wq", ":wq<CR>", opts)
 keymap("n", "qq", ":q!<CR>", opts)
 
+--close selected buffer 
+keymap("n", "<C-w>", ":bdelete<CR>", opts)
+
 -- Nvim Tree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
