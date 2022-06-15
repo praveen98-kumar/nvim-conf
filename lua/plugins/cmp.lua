@@ -12,8 +12,6 @@ if not status_ok then
   return 
 end
 
-
-
 local cmp_kinds = {
   Text = " ",
   Method = " ",
@@ -63,8 +61,10 @@ cmp.setup({
       return vim_item
     end
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  window = {
+      documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    }
   },
   experimental = {
     ghost_text = true,

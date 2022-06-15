@@ -4,8 +4,10 @@ if not status_ok then
 end
 
 nvim_tree.setup {
-  auto_open = 1, 
-  gitignore = 1,
+  auto_reload_on_write = true,
+  open_on_setup = false,
+  open_on_setup_file = false,
+  open_on_tab = false, 
   filters = {
     dotfiles = false,
     custom = {"node_modules", ".git", ".next"}
